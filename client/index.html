@@ -11,9 +11,9 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-s-12 col-m-12 col-lg-12">
-        <div ui-view="nav"></div>
-        <div ui-view></div>
+      <div class="col-lg-12">
+        <div ui-view="list"></div>
+        <div ui-view="map"></div>
       </div>
     </div>  
   </div>
@@ -24,13 +24,13 @@
   <script src="/app/app.module.js"></script>
   <script src="/app/core/core.module.js"></script>
   <script src="/app/core/config.js"></script>
-  <script src="/app/main/homeController.js"></script>
-  <script src="/app/main/eventsController.js"></script>
-  <script src="/app/main/rsvpController.js"></script>
-  <script src="/app/main/navController.js"></script>
-  <script src="/app/main/accomodationsController.js"></script>
-  <script src="/app/main/ourStoryController.js"></script>
-  <script src="/app/main/registryController.js"></script>
+  <script src="/app/free/free.module.js"></script>
+  <script src="/app/free/FreeController.js"></script>
+  <script src="/app/free/FreeFactory.js"></script>  
+  <script src="/app/map/map.module.js"></script>
+  <script src="/app/map/MapController.js"></script>
+  <script src="/app/map/MapFactory.js"></script>
+
 
 
 </body>

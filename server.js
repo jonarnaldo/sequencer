@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 // var dir = path.resolve(__dirname + '/client');
 var app = express();
-var cloudinary = require('cloudinary');
+var request = require('request');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -17,7 +17,25 @@ app.use(express.static(__dirname + '/client'));
 // Routes
 app.get('*', function(req, res, next) {
   res.sendFile(__dirname + '/client/index.html');
+  res.end();
 })
+
+app.get('/places', function(req, res, next) {
+  request('http://free4allapi.herokuapp.com/places', function(err, response, body) {
+    var data = response.body;
+    res.send(data);
+  })
+});
+
+app.get('/events', function(req, res, next) {
+  request('http://free4allapi.herokuapp.com/events', function(err, response, body) {
+    var data = response.body;
+    res.send(data);
+  })
+});
+
+
+
 
 app.listen(app.get('port'), function(){
   console.log('listening on port:' + app.get('port'));
