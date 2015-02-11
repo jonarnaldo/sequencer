@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/">
+    <meta charset="utf-8" />
+    <title>Free For All</title>
+    <link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  </head>
+  <body ng-app="app">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="list" ui-view="list"></div>
+        </div>
+        <div class="col-lg-6">
+          <div ui-view="map"></div>
+        </div>
+      </div>
+    </div>
+   
+    
+    <script src='/maps.googleapis.com/maps/api/js?sensor=false'></script>
+    <script src="/components/angular/angular.js"></script>
+    <script src="/components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="/components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/components/ngFx/dist/ngFx.js"></script>
+    <script src="/components/jquery/jquery.js"></script>
+    <script src="/components/underscore/underscore.js"></script>
+
+    <script src="app.module.js"></script>
+    <script src="/core/core.module.js"></script>
+    <script src="/core/config.js"></script>
+    <script src="/free/free.module.js"></script>
+    <script src="/free/FreeController.js"></script>    
+    <script src="/free/FreeFactory.js"></script>
+    <script src="/map/map.module.js"></script>
+    <script src="/map/MapController.js"></script>    
+    <script src="/map/MapFactory.js"></script>        
+  </body>
+</html>
+
