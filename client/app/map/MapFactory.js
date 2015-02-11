@@ -17,15 +17,26 @@
       var marker = {
         latitude: obj.location.lat,
         longitude: obj.location.lng,
-        id: id
+        id: id,
+        options: {
+          animation: 'DROP',
+          draggable: true
+        },
+        events: {
+          'click': function(Marker, eventName, model, args) {
+            console.log(Marker);
+          }
+        }
+
       }
 
-      marker.options = {
-        draggable: true,
-        labelContent: obj,
-        labelAnchor: "100 0",
-        labelClass: "marker-labels"
-      };
+      // marker.options = {
+      //   draggable: true,
+      //   labelContent: obj,
+      //   labelAnchor: '100 0',
+      //   labelClass: 'marker-labels',
+      //   animation: 'DROP'
+      // };
       return marker;
     }
 

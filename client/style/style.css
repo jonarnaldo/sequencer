@@ -1,1 +1,23 @@
-.angular-google-map-container { height: 400px; }
+.angular-google-map-container { height: 800px; }
+
+.list {
+  overflow: scroll;
+  height: 730px;
+  color: black;
+  background-color: #FCEAD0;
+  padding: 10px;
+  margin: 0px;
+  border-bottom: solid #cccccc 2px;
+}
+
+.list-item {
+  color: #6B7A6D;
+  border-bottom: dotted #E46561 1px;
+}
+
+.header {
+  background-color: #E46561;
+  color: white;
+  padding:; 0px;
+  margin: 0px;
+}
