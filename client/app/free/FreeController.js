@@ -10,15 +10,9 @@
   function FreeController(FreeFactory, MapFactory, $scope, $rootScope, $stateParams, $q, $timeout, $http){
     var vm = this;
     vm.free = [];
-    // vm.freeMarkers = [];
     vm.markers = [];
 
-    $scope.map = { center: { latitude: 37.774929, longitude: -122.419416 }, zoom: 12, bounds: {}    };
-  
-
-    // $scope.$watch('vm.freeMarkers', function(newValue, oldValue) {
-    //   console.log('vm.freeMarkers updated', newValue)
-    // })
+    $scope.map = { center: { latitude: 37.774929, longitude: -122.419416 }, zoom: 12, bounds: {} };
 
     vm.events = {
       'click': function(Marker, eventName, model, args) {
