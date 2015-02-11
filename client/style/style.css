@@ -15,6 +15,7 @@
   border-bottom: dotted #E46561 1px;
   -webkit-transition:width 2s, height 2s, background-color 1s, -webkit-transform .1s;
   transition:width 2s, height 2s, background-color 1s, transform .1s;
+  padding: 10px;
 }
 
 .list-item:hover {

@@ -1,19 +1,27 @@
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-12 header">
-      <img src="/images/treasure.png" height="50px"> Free4All
-    </div>
-  </div>
   <div class="row special">
     <div class="col-lg-12">
       <div class="list">
         <ul class="list-unstyled" ng-repeat="free in vm.free">
           <li class="list-item fx-fade-down">
-            <h4>{{ free.name }}</h4>
-            <a href="{{ free.href }}">details</a>
-            {{ free.date }}
-            {{ free.type }}
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-1">
+                  <img src="/images/{{ free.type}}.png" height="20px">
+                  {{ free.type }}
+                </div>
+                <div class="col-lg-11">
+                  <h3>{{ free.name }}</h3>                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <a href="{{ free.href }}">details</a>
+                  {{ free.date }}
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
