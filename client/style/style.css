@@ -1,4 +1,8 @@
-.angular-google-map-container { height: 800px; }
+body {
+  background-color: #FCEAD0;
+}
+
+.angular-google-map-container { height: 90vh; }
 
 .pane {
   -webkit-animation-duration: .5s;
@@ -6,7 +10,7 @@
 
 .list {
   overflow: scroll;
-  height: 730px;
+  height: 90vh;
   color: black;
   background-color: #FCEAD0;
   padding: 10px;
@@ -35,6 +39,10 @@
   padding: 0px;
   margin: 0px;
   height: 50px;
+}
+
+.header > span {
+
 }
 
 .title {
