@@ -37,13 +37,17 @@
           angular.forEach(events, function(event,index) {
             console.log('event')
             vm.free.push(event);      
-            angular.forEach(vm.free, function(item, index) {
-              vm.markers.push(MapFactory.creatMarker(item, index))                           
-            });
           })          
         })
       })
     }
+
+    $timeout(function(){
+      angular.forEach(vm.free, function(item, index) {
+        vm.markers.push(MapFactory.creatMarker(item, index))                           
+      });
+    },3000)
+
 
     $timeout(function() {
       init();
