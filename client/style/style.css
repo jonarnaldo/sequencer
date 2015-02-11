@@ -21,3 +21,7 @@
   padding:; 0px;
   margin: 0px;
 }
+
+div.special > div[class*="col-"] {
+ padding: 0; 
+}
