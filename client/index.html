@@ -1,43 +1,37 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <base href="/">
-    <meta charset="utf-8" />
-    <title>Free For All</title>
-    <link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles/style.css" />
-  </head>
-  <body ng-app="app">
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="list" ui-view="list"></div>
-        </div>
-        <div class="col-lg-6">
-          <div ui-view="map"></div>
-        </div>
+<html lang="en" ng-app="app">
+<head>
+  <base href="/">
+  <meta name="viewport" content="width=device-width" />
+  <title>JonandXiao</title>
+  <link rel="stylesheet" type="text/css" href="/components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/style/style.css">
+  <link rel="stylesheet" type="text/css" href="/components/animate.css/animate.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-s-12 col-m-12 col-lg-12">
+        <div ui-view="nav"></div>
+        <div ui-view></div>
       </div>
-    </div>
-   
-    
-    <script src='/maps.googleapis.com/maps/api/js?sensor=false'></script>
-    <script src="/components/angular/angular.js"></script>
-    <script src="/components/angular-google-maps/dist/angular-google-maps.min.js"></script>
-    <script src="/components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="/components/ngFx/dist/ngFx.js"></script>
-    <script src="/components/jquery/jquery.js"></script>
-    <script src="/components/underscore/underscore.js"></script>
+    </div>  
+  </div>
 
-    <script src="app.module.js"></script>
-    <script src="/core/core.module.js"></script>
-    <script src="/core/config.js"></script>
-    <script src="/free/free.module.js"></script>
-    <script src="/free/FreeController.js"></script>    
-    <script src="/free/FreeFactory.js"></script>
-    <script src="/map/map.module.js"></script>
-    <script src="/map/MapController.js"></script>    
-    <script src="/map/MapFactory.js"></script>        
-  </body>
+  <script src="/components/angular/angular.min.js"></script>
+  <script src="/components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="/components/ngFx/dist/ngFx.min.js"></script>
+  <script src="/app/app.module.js"></script>
+  <script src="/app/core/core.module.js"></script>
+  <script src="/app/core/config.js"></script>
+  <script src="/app/main/homeController.js"></script>
+  <script src="/app/main/eventsController.js"></script>
+  <script src="/app/main/rsvpController.js"></script>
+  <script src="/app/main/navController.js"></script>
+  <script src="/app/main/accomodationsController.js"></script>
+  <script src="/app/main/ourStoryController.js"></script>
+  <script src="/app/main/registryController.js"></script>
+
+
+</body>
 </html>
-
