@@ -7,9 +7,9 @@ Find Free things around you! Built in Angular
 > git clone https://github.com/jonarnaldo/free4all.git
 
 2. install Bower and NPM dependencies
-> bower install
+  > bower install
 
-> npm install
+  > npm install
 
 3. launch the application using nodemon
 > nodemon
