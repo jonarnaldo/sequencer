@@ -27,24 +27,28 @@
     $scope.map = { center: { latitude: 37.774929, longitude: -122.419416 }, zoom: 13, bounds: {} };
 
     function init() {
-      FreeFactory.getFree('places').then(function(places){
-        vm.free = places;
-        return places;
-      }).then(function(places) {
-        FreeFactory.getFree('events').then(function(events) {
-          var tempEvents = events, tempPlaces = places;
-          vm.free = events.concat(places);
-          // add marker to map
-          angular.forEach(vm.free, function (item, index) {
-            vm.markers.push(MapFactory.creatMarker(item, index));
-          })
-          console.log('markers',vm.markers.length, vm.free.length);
-          console.log(vm.free);
+      FreeFactory.getFree('places',function(places){
+        angular.forEach(places, function(place,index) {
+          console.log('place')
+          vm.free.push(place);         
         })
+
+        FreeFactory.getFree('events', function(events) {
+          angular.forEach(events, function(event,index) {
+            console.log('event')
+            vm.free.push(event);      
+            angular.forEach(vm.free, function(item, index) {
+              vm.markers.push(MapFactory.creatMarker(item, index))                           
+            });
+          })          
+        })
+
       })
     }
 
-    init();  
+    $timeout(function() {
+      init();
+    },400);  
   }
 })();
     

@@ -1,5 +1,9 @@
 .angular-google-map-container { height: 800px; }
 
+.pane {
+  -webkit-animation-duration: .5s;
+}
+
 .list {
   overflow: scroll;
   height: 730px;
@@ -24,8 +28,6 @@
   -webkit-transform: translateY(-5px);
   transform: translateY(-5px);
 }
-
-
 
 .header {
   background-color: #E46561;
