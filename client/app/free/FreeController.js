@@ -24,7 +24,6 @@
       animation: 'DROP'
     }
 
-
     $scope.map = { center: { latitude: 37.774929, longitude: -122.419416 }, zoom: 13, bounds: {} };
 
     function init() {
@@ -40,6 +39,7 @@
             vm.markers.push(MapFactory.creatMarker(item, index));
           })
           console.log('markers',vm.markers.length, vm.free.length);
+          console.log(vm.free);
         })
       })
     }

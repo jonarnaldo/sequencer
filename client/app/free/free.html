@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-12 header">
-      <h2><img src="/images/treasure.png" height="50px"> Free4All</h2>
+      <img src="/images/treasure.png" height="50px"> Free4All
     </div>
   </div>
   <div class="row special">
@@ -11,7 +11,7 @@
         <ul class="list-unstyled" ng-repeat="free in vm.free">
           <li class="list-item fx-fade-down">
             <h4>{{ free.name }}</h4>
-            <a href="{{ vm.href }}">details</a>
+            <a href="{{ free.href }}">details</a>
             {{ free.date }}
             {{ free.type }}
           </li>
