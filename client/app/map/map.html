@@ -1,4 +1,10 @@
 <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
-    <ui-gmap-markers models="vm.markers" events="vm.events" options="vm.marker.options" coords="'self'" icon="'icon'">
-    </ui-gmap-markers>
+  <ui-gmap-markers models="vm.markers" options="'options'" coords="'self'" icon="'icon'" click="'getWindow'">
+    <ui-gmap-windows>
+      <div ng-non-bindable> 
+        <div><a href="{{ link }}">{{ title }}</a></div>
+        <div> Type: {{ type }} </div>
+      </div>
+    </ui-gmap-windows>
+  </ui-gmap-markers>
 </ui-gmap-google-map>

@@ -21,23 +21,27 @@
       var marker = {
         latitude: obj.location.lat,
         longitude: obj.location.lng,
-        id: id
+        id: id,
+        show: false,
+        title: obj.name,
+        type: obj.type,
+        link: obj.href
+      }
+
+      marker.getWindow = function () {
+        console.log('clicked');
+        marker.show = true;
       }
 
       marker.options = {
-        draggable: true,
-        labelContent: obj,
-        labelAnchor: '100 0',
-        labelClass: obj.name,
-        animation: 'DROP'
+        events: {
+          'mouseover': function () {
+            console.log('mouseover');
+          }
+        }
       };
-      return marker;
-    }
 
-    vm.events = {
-      'click': function(Marker, eventName, model, args) {
-        console.log(model);
-      }
+      return marker;
     }
   }
 })();

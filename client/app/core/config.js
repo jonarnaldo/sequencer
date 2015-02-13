@@ -5,7 +5,7 @@ angular
   .module('app.core')
   .config(config);
 
-  function config($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  function config(uiGmapGoogleMapApiProvider, $stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
     $stateProvider
 
@@ -30,6 +30,12 @@ angular
 
 
     $urlRouterProvider.otherwise('/');
+
+    uiGmapGoogleMapApiProvider.configure({
+    //    key: 'your api key',
+      v: '3.17',
+      libraries: 'weather,geometry,visualization'
+    });
 
   }
 }).call(this)
