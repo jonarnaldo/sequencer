@@ -25,22 +25,16 @@
         options: {
           animation: 'DROP',
           draggable: true
-        },
-        events: {
-          'click': function(Marker, eventName, model, args) {
-            console.log(Marker);
-          }
         }
-
       }
 
-      // marker.options = {
-      //   draggable: true,
-      //   labelContent: obj,
-      //   labelAnchor: '100 0',
-      //   labelClass: 'marker-labels',
-      //   animation: 'DROP'
-      // };
+      marker.options = {
+        draggable: true,
+        labelContent: obj,
+        labelAnchor: '100 0',
+        labelClass: obj.name,
+        animation: 'DROP'
+      };
       return marker;
     }
 

@@ -13,15 +13,16 @@
     vm.markers = null;
 
     $scope.$watch(function() {
-      // console.log(MapFactory.map.markers);
       return MapFactory.map.markers;
     }, function (newValue, oldValue) {
-      vm.markers = MapFactory.map.markers;
+      if (typeof newValue !== 'undefined') {
+        vm.markers = MapFactory.map.markers;
+      }
     })
 
     vm.events = {
-      'click': function(Marker, eventName, model, args) {
-        console.log(model);
+      'mouseover': function(Marker, eventName, model, args) {
+        console.log(model.options.labelContent.name);
       }
     }
   }
