@@ -21,11 +21,7 @@
       var marker = {
         latitude: obj.location.lat,
         longitude: obj.location.lng,
-        id: id,
-        options: {
-          animation: 'DROP',
-          draggable: true
-        }
+        id: id
       }
 
       marker.options = {
