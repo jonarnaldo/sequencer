@@ -6,9 +6,13 @@
 
   function MapFactory($http, $q, $timeout){
     var places, events, things;
+    var map = {
+      markers: []
+    };
 
     var services = {
-      creatMarker: creatMarker
+      creatMarker: creatMarker,
+      map: map
     }
 
     return services;
