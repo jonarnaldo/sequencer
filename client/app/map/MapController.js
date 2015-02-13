@@ -13,6 +13,7 @@
     vm.markers = null;
 
     $scope.$watch(function() {
+      // console.log(MapFactory.map.markers);
       return MapFactory.map.markers;
     }, function (newValue, oldValue) {
       vm.markers = MapFactory.map.markers;
