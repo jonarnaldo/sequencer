@@ -1,6 +1,6 @@
 <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
-  <ui-gmap-markers models="vm.markers" options="'options'" coords="'self'" icon="'icon'" click="'getWindow'">
-    <ui-gmap-windows>
+  <ui-gmap-markers draggable="true" models="vm.markers" events="events" coords="'self'" icon="'icon'" click="'getWindow'">
+    <ui-gmap-windows show="'show'">
       <div ng-non-bindable> 
         <div><a href="{{ link }}">{{ title }}</a></div>
         <div> Type: {{ type }} </div>

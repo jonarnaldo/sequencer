@@ -11,13 +11,13 @@
     };
 
     var services = {
-      creatMarker: creatMarker,
+      createMarker: createMarker,
       map: map
     }
 
     return services;
 
-    function creatMarker(obj, id) {
+    function createMarker(obj, id) {
       var marker = {
         latitude: obj.location.lat,
         longitude: obj.location.lng,
@@ -25,21 +25,14 @@
         show: false,
         title: obj.name,
         type: obj.type,
-        link: obj.href
+        link: obj.href,
+        draggable: true
       }
 
       marker.getWindow = function () {
         console.log('clicked');
         marker.show = true;
       }
-
-      marker.options = {
-        events: {
-          'mouseover': function () {
-            console.log('mouseover');
-          }
-        }
-      };
 
       return marker;
     }

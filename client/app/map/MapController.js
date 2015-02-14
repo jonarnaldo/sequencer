@@ -14,26 +14,36 @@
 
     $scope.windowOptions = {
         visible: false
-    };    
+    };   
+
+    $scope.$on('single', function(event, args) {
+      vm.markers = [];
+      $timeout(function() {
+        vm.markers.push(args);
+      },100)
+    })
+
+    $scope.$on('showAll', function(event, args) {
+      vm.markers = vm.temp;
+    })
 
     uiGmapGoogleMapApi.then(function(maps) {
       console.log('ready')
       $scope.$on('markers-complete', function(event, args) {
         vm.markers = MapFactory.map.markers;
+        vm.temp = angular.copy(vm.markers);
       })
 
-      vm.getWindow = function () {
-        $scope.windowOptions.visible = !$scope.windowOptions.visible;
-      }
-
-      vm.events = [
-        {
-          'click': function(marker, eventName, model, args) {
-            console.log('mouse over');
-          }
+      $scope.events = {
+        "mouseover": function (marker, eventName, model, args) {
+          model.show = true;
+        },
+        "mouseout": function (marker, eventName, model, args) {
+          $timeout(function() {
+            model.show = false;
+          },2000);
         }
-      ];
-
+      } 
     });
   }
 })();
