@@ -16,10 +16,6 @@ angular
           templateUrl:'app/free/free.html',
           controller:'FreeController as vm'
         },
-        'map': {
-          templateUrl:'app/map/map.html',
-          controller:'MapController as vm' 
-        },
         'header': {
           templateUrl:'app/header/header.html'
         }

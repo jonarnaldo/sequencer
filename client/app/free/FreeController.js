@@ -6,41 +6,66 @@
   .module('app.free')
   .controller('FreeController', FreeController);
 
-  FreeController.$inject = ['FreeFactory', 'MapFactory', '$scope', '$rootScope', '$stateParams', '$q', '$timeout', '$http'];
+  FreeController.$inject = ['FreeFactory', 'MapFactory', '$scope', '$rootScope', '$stateParams', '$q', '$timeout', '$interval', '$http'];
 
-  function FreeController(FreeFactory, MapFactory, $scope, $rootScope, $stateParams, $q, $timeout, $http){
+  function FreeController(FreeFactory, MapFactory, $scope, $rootScope, $stateParams, $q, $timeout, $interval, $http){
     var vm = this;
-    vm.free = [];
+    vm.seqArray = [];
 
-    vm.select = function(obj) {
-      var single = MapFactory.createMarker(obj,1);
-      $rootScope.$broadcast('single', single);
+    vm.createSeqArray = function(rows, columns) {
+      //create rows
+      for (var i = 0; i < rows; i++) {
+        vm.seqArray.push([]);
+        for (var j = 0; j < columns; j++) {
+          vm.seqArray[i].push({});
+        }
+      }
+      console.log(vm.seqArray);
     }
 
-    vm.deselect = function() {
-      $rootScope.$broadcast('showAll');
+
+    function timeout(object, index, time) {
+      $timeout(function() {
+        console.log(object);
+      }, (index + 1) * time);
     }
 
+    // cycles through a single row's columns
+    vm.cycleColumns = function(row) {
+      var row = vm.seqArray[row];
+      for (var i = 0; i < row.length; ++i) {
+        timeout(row[i], i, 2000);
+      }
+    }
 
-    // creates list and markers
-    function init() {
-      FreeFactory.getFree('places',function(places){
-        angular.forEach(places, function(place,index) {
-          vm.free.push(place); 
-          MapFactory.map.markers.push(MapFactory.createMarker(place, index));        
-        })
-        FreeFactory.getFree('events', function(events) {
-          angular.forEach(events, function(event,index) {
-            vm.free.push(event);
-            MapFactory.map.markers.push(MapFactory.createMarker(event, index));              
-          })          
-          console.log('done');
-          $rootScope.$broadcast('markers-complete', MapFactory.map.markers);
+    // cycles through entire array
+    vm.cycleSeqArray = function(cb) {
+      angular.forEach(vm.seqArray, function(row, rowIndex) {
+        angular.forEach(row, function(col, colIndex) {
+          cb(rowIndex, colIndex, col);
         })
       })
     }
 
-    init(); 
+    // for testing - adds 'beep' to each unit
+    vm.beep = function(object, rIndex, cIndex) {
+      vm.cycleSeqArray(function(rowIndex, colIndex, col) {
+        if (rowIndex === rIndex && colIndex === cIndex) { col.beep = object; }
+      })
+      console.log(vm.seqArray)
+    }
+
+    vm.playSequence = function() {
+      // goes through sequenceArray rows and fired cycleColumns simultaneously
+      // for each row... 
+      vm.cycleColumns(0);
+    }
+
+    vm.init = function() {
+      vm.createSeqArray(3,3);
+    }
+
+    vm.init();
   }
 })();
     

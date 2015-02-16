@@ -8,31 +8,6 @@ body {
   -webkit-animation-duration: .5s;
 }
 
-.list {
-  overflow: scroll;
-  height: 90vh;
-  color: black;
-  background-color: #FCEAD0;
-  padding: 10px;
-  margin: 0px;
-  border-bottom: solid #cccccc 2px;
-}
-
-.list-item {
-  color: #6B7A6D;
-  border-bottom: dotted #E46561 1px;
-  -webkit-transition:width 2s, height 2s, background-color 1s, -webkit-transform .1s;
-  transition:width 2s, height 2s, background-color 1s, transform .1s;
-  padding: 10px;
-}
-
-.list-item:hover {
-  background-color: #4BA890;
-  color: white;
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
-}
-
 .header {
   background-color: #E46561;
   color: white;
@@ -42,7 +17,6 @@ body {
 }
 
 .header > span {
-
 }
 
 .title {
@@ -51,4 +25,17 @@ body {
 
 div.special > div[class*="col-"] {
  padding: 0; 
+}
+
+.seq-box {
+  border: solid #cccccc 1px;
+  background-color: #E46561;
+  height: 100px;
+  width: 100px;
+  -webkit-transition: background-color 1s;
+  transition: background-color .2s;
+}
+
+.seq-box:hover {
+  background-color: white;
 }

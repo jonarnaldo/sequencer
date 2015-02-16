@@ -14,7 +14,7 @@
       createMarker: createMarker,
       map: map
     }
-
+    
     return services;
 
     function createMarker(obj, id) {
@@ -28,12 +28,10 @@
         link: obj.href,
         draggable: true
       }
-
       marker.getWindow = function () {
         console.log('clicked');
         marker.show = true;
       }
-
       return marker;
     }
   }
