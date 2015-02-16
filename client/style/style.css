@@ -1,0 +1,41 @@
+body {
+  background-color: #FCEAD0;
+}
+
+.angular-google-map-container { height: 90vh; }
+
+.pane {
+  -webkit-animation-duration: .5s;
+}
+
+.header {
+  background-color: #E46561;
+  color: white;
+  padding: 0px;
+  margin: 0px;
+  height: 50px;
+}
+
+.header > span {
+}
+
+.title {
+  font-size: 2em;
+}
+
+div.special > div[class*="col-"] {
+ padding: 0; 
+}
+
+.seq-box {
+  border: solid #cccccc 1px;
+  background-color: #E46561;
+  height: 100px;
+  width: 100px;
+  -webkit-transition: background-color 1s;
+  transition: background-color .2s;
+}
+
+.seq-box:hover {
+  background-color: white;
+}
