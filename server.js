@@ -34,9 +34,6 @@ app.get('/events', function(req, res, next) {
   })
 });
 
-
-
-
 app.listen(app.get('port'), function(){
   console.log('listening on port:' + app.get('port'));
 });

@@ -16,6 +16,7 @@
       console.log('getting data...');
       $http.get('/' + type).success(function(data, status, headers, config) {
         console.log('data received', type);
+        console.log(data);
         cb(data)
       }).error(function (data, status, headers, config) {
         console.log('Error! ', status);

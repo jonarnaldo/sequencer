@@ -20,7 +20,7 @@
       vm.markers = [];
       $timeout(function() {
         vm.markers.push(args);
-      },600)
+      },200)
     })
 
     $scope.$on('showAll', function(event, args) {
