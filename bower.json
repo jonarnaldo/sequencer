@@ -19,6 +19,7 @@
     "ngFx": "~1.0.5",
     "animate.css": "~3.2.0",
     "angular-google-maps": "~2.0.12",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "ionsound": "~3.0.0"
   }
 }
