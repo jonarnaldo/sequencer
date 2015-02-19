@@ -14,7 +14,6 @@
       timeout: timeout
     }
 
-
     ion.sound({
       sounds: [
         {
@@ -64,7 +63,6 @@
     }
 
     return services;
-  
   }
 })();
 
