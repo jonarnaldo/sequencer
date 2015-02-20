@@ -1,8 +1,9 @@
 
 <div class="container-fluid">
   <div class="row special">
-    <div class="col-lg-1">    
-      <button ng-click="vm.playSequence()">play</button>
+    <div class="col-lg-1">   
+      <input ng-model="time" placeholder="time(ms)"/>
+      <button ng-click="vm.playSequence(time)">play</button>
     </div>
   </div>
   <div class="row special">

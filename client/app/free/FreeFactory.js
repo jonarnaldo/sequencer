@@ -14,7 +14,6 @@
       timeout: timeout
     }
 
-
     ion.sound({
       sounds: [
         {
@@ -48,18 +47,15 @@
     }
 
     // cycles through a single row's columns
-    function cycleColumns(row, time, cb) {
-      console.log(row);
+    function cycleColumns(row, cb) {
       for (var i = 0; i < row.length; i++) {
-        timeout(row[i], i, time, function() {
-          cb();
-        });
+        cb(row, row[i], i)
       }
     } 
 
     function timeout(object, index, time, cb) {
       $timeout(function() {
-        cb();
+        cb(object);
       }, index * time);
     }
 

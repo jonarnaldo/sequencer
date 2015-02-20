@@ -19,20 +19,28 @@
         object.sound = "sound";
       });
       FreeFactory.play();
+      console.log(vm.seqArray);
     }
 
-
-    vm.playSequence = function() {
+    vm.playSequence = function(time) {
       // goes through sequenceArray rows and invoke cycleColumns simultaneously
       // for each row...
+      console.log(vm.seqArray);
       for (var i = 0; i < vm.seqArray.length; i++) {
-        console.log(vm.seqArray[i]);
+        FreeFactory.cycleColumns(vm.seqArray[i], function(array, object, index) {
+          FreeFactory.timeout(object, index, time, function() {
+            console.log(object);
+            if (object.hasOwnProperty('sound')) {
+              FreeFactory.play();
+            }
+          })
+        })
+
       }
     }   
 
     function init() {
       FreeFactory.createSeqArray(vm.seqArray, 3, 3);
-      console.log(vm.seqArray);
     }
 
     init();
