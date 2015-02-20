@@ -19,7 +19,6 @@
     /*
      * Feature areas
      */
-     'app.free',
-     'app.map'
+     'app.free'
   ]);
 })();

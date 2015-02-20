@@ -6,9 +6,9 @@
   .module('app.free')
   .controller('FreeController', FreeController);
 
-  FreeController.$inject = ['FreeFactory', 'MapFactory', '$scope', '$rootScope', '$stateParams', '$q', '$timeout', '$interval', '$http'];
+  FreeController.$inject = ['FreeFactory', '$scope', '$rootScope', '$stateParams', '$q', '$timeout', '$interval', '$http'];
 
-  function FreeController(FreeFactory, MapFactory, $scope, $rootScope, $stateParams, $q, $timeout, $interval, $http){
+  function FreeController(FreeFactory, $scope, $rootScope, $stateParams, $q, $timeout, $interval, $http){
     var vm = this;
     var interval = undefined;
     vm.seqArray = [];
@@ -33,16 +33,22 @@
             FreeFactory.timeout(object, index, time, function() {
               if (object.sound) {
               console.log(object);
-                if (object.sound === 'door_bell') {
-                  FreeFactory.play('door_bell');
-                } else if (object.sound === 'test') {
-                  FreeFactory.play('test');
+                if (object.sound === 'kick') {
+                  FreeFactory.play('kick');
+                }  
+                
+                if (object.sound === 'snare') {
+                  FreeFactory.play('snare');
+                } 
+
+                if (object.sound === 'high_hat') {
+                  FreeFactory.play('high_hat');
                 }
               }
             });
           });
         }
-      }, 4000);
+      }, time * vm.seqArray[0].length);
     }; 
 
     vm.stopSequence = function() {
@@ -55,8 +61,13 @@
       }
     };
 
+    vm.clearSequence = function() {
+      FreeFactory.createSeqArray(vm.seqArray, 3, 8);
+    }
+
     function init() {
-      FreeFactory.createSeqArray(vm.seqArray, 3, 3);
+      FreeFactory.createSeqArray(vm.seqArray, 3, 8);
+      console.log(vm.seqArray);
     }
 
     init();

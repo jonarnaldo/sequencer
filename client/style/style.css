@@ -32,8 +32,13 @@ div.special > div[class*="col-"] {
   background-color: #E46561;
   height: 100px;
   width: 100px;
+  border-radius: 15px;
   -webkit-transition: background-color 1s;
   transition: background-color .2s;
+}
+
+.spacer {
+  visibility: hidden;
 }
 
 .seq-box:hover {

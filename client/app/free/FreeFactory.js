@@ -17,15 +17,20 @@
     ion.sound({
       sounds: [
         {
-          name: "test",
+          name: "kick",
           volume: 0.5,
           preload: false
         },
         {
-          name: "door_bell",
+          name: "snare",
           volume: 0.5,
           preload: false
-        }
+        },
+        {
+          name: "high_hat",
+          volume: 0.5,
+          preload: false
+        }        
       ],
       volume: 0.5,
       path: "sounds/",
@@ -43,7 +48,10 @@
       for (var i = 0; i < rows; i++) {
         array.push([]);
         for (var j = 0; j < columns; j++) {
-          array[i].push({});
+          array[i].push({
+            row: i,
+            col: j
+          });
         }
       }
     }

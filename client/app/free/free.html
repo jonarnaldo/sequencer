@@ -5,37 +5,44 @@
       <input ng-model="time" placeholder="time(ms)"/>
       <button ng-click="vm.playSequence(time)">play</button>
       <button ng-click="vm.stopSequence()">stop</button>
+      <button ng-click="vm.clearSequence()">clear</button>
     </div>
   </div>
   <div class="row special">
     <div class="col-lg-12">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-4"></div>
-          <div class="col-lg-4">
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2" ng-click="vm.click('test',0,0)">1</div>
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2" ng-click="vm.click('test',0,1)">2</div>
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2"ng-click="vm.click('test',0,2)">3</div>
+          <div class="col-lg-12">
+            <div class="seq-box col-xs-1 col-s-1 col-lg-1 spacer"></div>
+            <div class="seq-box col-xs-1 col-s-1 col-lg-1 spacer"></div>
+            <div ng-repeat="unit in vm.seqArray[0]">
+              <div class="seq-box col-xs-1 col-s-1 col-lg-1" ng-click="vm.click('high_hat', 0, 1)">{{ unit.col + 1 }}</div>
+            </div>
+            <div class="seq-box col-xs-1 col-s-1 col-lg-1 spacer"></div>
+            <div class="seq-box col-xs-1 col-s-1 col-lg-1 spacer"></div>
           </div>
-          <div class="col-lg-4"></div>
         </div>
         <div class="row">
-          <div class="col-lg-4"></div>
-          <div class="col-lg-4">
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2" ng-click="vm.click('door_bell',1,0)">4</div>
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2" ng-click="vm.click('door_bell',1,1)">5</div>
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2"ng-click="vm.click('door_bell',1,2)">6</div>
+          <div class="col-lg-12">
+            <div class="seq-box col-xs-1 col-s-1 col-lg-1 spacer"></div>
+            <div class="seq-box col-xs-1 col-s-1 col-lg-1 spacer"></div>
+            <div ng-repeat="unit in vm.seqArray[0]">
+              <div class="seq-box col-xs-1 col-s-1 col-lg-1" ng-click="vm.click('snare',0,1)">{{ unit.col + 1 }}</div>
+            </div>
+            <div class="seq-box col-xs-1 col-s-1 col-lg-1 spacer"></div>
+            <div class="seq-box col-xs-1 col-s-1 col-lg-1 spacer"></div>
           </div>
-          <div class="col-lg-4"></div>
         </div>
         <div class="row">
-          <div class="col-lg-4"></div>
-          <div class="col-lg-4">
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2" ng-click="vm.click('click',2,0)">7</div>
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2" ng-click="vm.click('click',2,1)">8</div>
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2"ng-click="vm.click('click',2,2)">9</div>
+          <div class="col-lg-12">
+            <div class="seq-box col-xs-1 col-s-1 col-lg-1 spacer"></div>
+            <div class="seq-box col-xs-1 col-s-1 col-lg-1 spacer"></div>
+            <div ng-repeat="unit in vm.seqArray[0]">
+              <div class="seq-box col-xs-1 col-s-1 col-lg-1" ng-click="vm.click('kick',0,1)">{{ unit.col + 1 }}</div>
+            </div>
+            <div class="seq-box col-xs-1 col-s-1 col-lg-1 spacer"></div>
+            <div class="seq-box col-xs-1 col-s-1 col-lg-1 spacer"></div>
           </div>
-          <div class="col-lg-4"></div>
         </div>
       </div>
     </div>
