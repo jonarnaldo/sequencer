@@ -1,12 +1,9 @@
 var gulp = require('gulp');
-var karma = require('karma').server;
+var jshint = require('gulp-jshint');
 
-/**
- * Run test once and exit
- */
-gulp.task('default', function (done) {
-  karma.start({
-    configFile: __dirname + '/my.conf.js',
-    singleRun: true
-  }, done);
-});
+gulp.task('default',function() {
+  return gulp
+    .src('./client/app/**/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+})

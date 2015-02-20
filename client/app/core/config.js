@@ -1,5 +1,5 @@
 ;(function () {
-'use strict'
+'use strict';
 
 angular
   .module('app.core')
@@ -20,7 +20,7 @@ angular
           templateUrl:'app/header/header.html'
         }
       }
-    })
+    });
 
     $locationProvider.html5Mode(true);
 
@@ -34,4 +34,4 @@ angular
     });
 
   }
-}).call(this)
+}).call(this);

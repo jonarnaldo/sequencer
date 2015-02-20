@@ -12,7 +12,7 @@
       cycleColumns: cycleColumns,
       findUnit: findUnit,
       timeout: timeout
-    }
+    };
 
     ion.sound({
       sounds: [
@@ -20,16 +20,22 @@
           name: "test",
           volume: 0.5,
           preload: false
+        },
+        {
+          name: "door_bell",
+          volume: 0.5,
+          preload: false
         }
       ],
       volume: 0.5,
       path: "sounds/",
-      preload: true
+      preload: true,
+      multiplay: true
     });
 
-    function play () {
-      console.log('playing test');
-      ion.sound.play("test");
+    function play (sample) {
+      console.log(sample);
+      ion.sound.play(sample);
     }
 
     function createSeqArray(array, rows, columns) {
@@ -49,7 +55,7 @@
     // cycles through a single row's columns
     function cycleColumns(row, cb) {
       for (var i = 0; i < row.length; i++) {
-        cb(row, row[i], i)
+        cb(row, row[i], i);
       }
     } 
 

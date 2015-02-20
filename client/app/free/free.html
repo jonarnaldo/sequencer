@@ -4,6 +4,7 @@
     <div class="col-lg-1">   
       <input ng-model="time" placeholder="time(ms)"/>
       <button ng-click="vm.playSequence(time)">play</button>
+      <button ng-click="vm.stopSequence()">stop</button>
     </div>
   </div>
   <div class="row special">
@@ -12,18 +13,18 @@
         <div class="row">
           <div class="col-lg-4"></div>
           <div class="col-lg-4">
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2" ng-click="vm.click('click',0,0)">1</div>
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2" ng-click="vm.click('click',0,1)">2</div>
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2"ng-click="vm.click('click',0,2)">3</div>
+            <div class="seq-box col-xs-2 col-s-2 col-lg-2" ng-click="vm.click('test',0,0)">1</div>
+            <div class="seq-box col-xs-2 col-s-2 col-lg-2" ng-click="vm.click('test',0,1)">2</div>
+            <div class="seq-box col-xs-2 col-s-2 col-lg-2"ng-click="vm.click('test',0,2)">3</div>
           </div>
           <div class="col-lg-4"></div>
         </div>
         <div class="row">
           <div class="col-lg-4"></div>
           <div class="col-lg-4">
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2" ng-click="vm.click('click',1,0)">4</div>
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2" ng-click="vm.click('click',1,1)">5</div>
-            <div class="seq-box col-xs-2 col-s-2 col-lg-2"ng-click="vm.click('click',1,2)">6</div>
+            <div class="seq-box col-xs-2 col-s-2 col-lg-2" ng-click="vm.click('door_bell',1,0)">4</div>
+            <div class="seq-box col-xs-2 col-s-2 col-lg-2" ng-click="vm.click('door_bell',1,1)">5</div>
+            <div class="seq-box col-xs-2 col-s-2 col-lg-2"ng-click="vm.click('door_bell',1,2)">6</div>
           </div>
           <div class="col-lg-4"></div>
         </div>
