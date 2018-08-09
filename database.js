@@ -1,1 +1,0 @@
-// URI postgres://adpzszjlgcqplh:8mX-syPz1JmnsunWP5ntsWcvsJ@ec2-54-83-204-78.compute-1.amazonaws.com:5432/df21mspdndiplh
